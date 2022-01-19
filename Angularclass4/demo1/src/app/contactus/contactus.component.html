@@ -1,0 +1,9 @@
+<p>This is a contact us section</p>
+<form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
+<div class="form-group">
+        <label for="">Phone Number:</label>
+        <input type="tec" minlength="0" maxlength="10" name="phn" #phn="ngModel" pattern="^[0-9]+$"  class="Form-control" ngModel><br>
+        <span style="color: red;" *ngIf="phn.invalid && phn.touched">Enter valid Phone Number</span><br><br>
+        <button [disabled]="regForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>

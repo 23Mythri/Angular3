@@ -1,0 +1,21 @@
+<p>This is a login section</p>
+
+<div class="container">
+    <div class="col-md-6">
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="exampleInputEmail1" >Email Address</label>
+      <input type="email"  class="Form-control" name="uemail" aria-describedby="uemail-help" formControlName="uemail"><br>
+     <span style="color: red;" *ngIf="uemail.invalid && uemail.touched">*enter valid Email Address</span>
+    </div>                                                                           
+    <div class="form-group">
+        <label for="exampleInputPassword1" >Password</label>
+        <input type="password"  class="Form-control" name="password" aria-describedby="email-help" formControlName="upass" ><br>
+        <span style="color: red;" *ngIf="upass.invalid && upass.touched">*enter valid password</span>
+      </div>  
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+  </div>

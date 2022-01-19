@@ -1,0 +1,50 @@
+<p>This is a registration section </p>
+<div class="container">
+    <div class="col-md-6">
+
+<form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)" >
+    <div class="form-group">
+      <label for="exampleInputEmail1" >First Name</label>
+      <input type="ngModel" #fname="ngModel" required minlength="6" type="text" name="fname" maxlength="10" pattern="[A-Za-z]+$" class="Form-control" aria-describedby="email-help" ngModel><br>
+     <span style="color: red;" *ngIf="fname.invalid && fname.touched">*enter valid first name</span>
+    </div>                                                                           
+    <div class="form-group"> 
+      <label for="exampleInputPassword1" >LastName</label>
+      <input type="ngModel" #lname="ngModel" required minlength="2" maxlength="3" type="text" name="lname" class="Form-control" ngModel><br>
+      <span style="color: red;" *ngIf="lname.invalid && lname.touched">*enter valid LastName</span>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Address:</label>
+        <input type="text" type="ngModel" placeholder="enter the city" name="city" #city="ngModel" class="form-control" pattern="[A-Za-z]+$" required ngModel> 
+        <span style="color: red;" *ngIf="city.invalid && city.touched">*enter valid cityname</span>
+        <input type="text"  type="ngModel" placeholder="enter the state" name="state" #state="ngModel" class="form-control"  pattern="[A-Za-z]+$" required ngModel> 
+        <span style="color: red;" *ngIf="state.invalid && state.touched">*enter valid statename</span>
+      </div>
+      <div class="form-group">
+        <label for="" >Age</label>
+        <input type="ngModel" #age="ngModel" type="number" name="age"  class="Form-control" aria-describedby="email-help" minlength="1" maxlength="2" required pattern="^[1023456789]+$" ngModel><br>
+       <span style="color: red;" *ngIf="age.invalid && age.touched">*enter valid age</span>
+      </div>  
+      <div class="form-group">
+        <label for="" >Gender:</label>
+        <input type="radio" #male="ngModel" required name="Gender"  value="female" class="Form-control" aria-describedby="email-help" ngModel><label for="">female</label>
+        <input type="radio" #male="ngModel" required name="Gender"  value="male" class="Form-control" aria-describedby="email-help" ngModel><label>male</label>
+       <span style="color: red;" *ngIf="male.invalid && male.touched">*select Gender</span>
+      </div>  
+      <div class="form-group">
+        <label for="" >subjects:</label>
+        <input type="checkbox" #python="ngModel" name="SUBJECT" value="python" required class="Form-control" aria-describedby="email-help" ngModel><label>python</label>
+        <input type="checkbox" #python="ngModel"name="SUBJECT"   value="java" required class="Form-control" aria-describedby="email-help" ngModel><label>java</label>
+        <input type="checkbox" #python="ngModel"name="SUBJECT"  value="javaScript" required class="Form-control" aria-describedby="email-help" ngModel><label>javaScript</label>
+       <span style="color: red;" *ngIf="python.invalid && python.touched">*select any one subject</span>
+      </div>
+      
+
+      
+
+    <button [disabled]="regForm.invalid" type="submit" class="btn btn-primary" on>Submit</button>
+  </form>
+  </div>
+  </div>
+  <!-- <h4>{{regForm.value | json}}</h4> -->
+  

@@ -1,0 +1,24 @@
+<p>aboutus works!</p>
+<script src="./aboutus.component.ts"></script>
+<!-- <div class="container">
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Department</th>
+        <th scope="col">Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of result">
+        <td>{{r.name}}</td>
+        <td>{{r.department}}</td>
+        <td>{{r.id}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+<label for="name">EmployeeName</label>
+<input type="text" #username>
+<button (click)="idGenerator()">Create Id</button>
+<h3>{{ID}}</h3>
